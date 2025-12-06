@@ -1,0 +1,88 @@
+/* Global Styles using Telegram Theme Variables with Fallbacks */
+
+:root {
+  /* Define fallbacks for when not in a Telegram Mini App environment */
+  --tg-theme-bg-color-fallback: #f0f0f0;
+  --tg-theme-text-color-fallback: #1c1c1c;
+  --tg-theme-button-color-fallback: #5a93f0;
+  --tg-theme-button-text-color-fallback: #ffffff;
+  --tg-theme-hint-color-fallback: #a8a8a8;
+  --tg-theme-link-color-fallback: #5a93f0;
+  --tg-theme-section-bg-color-fallback: #ffffff;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background-color: var(--tg-theme-bg-color, var(--tg-theme-bg-color-fallback));
+  color: var(--tg-theme-text-color, var(--tg-theme-text-color-fallback));
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: var(--tg-theme-text-color, var(--tg-theme-text-color-fallback));
+}
+
+p, label {
+    color: var(--tg-theme-hint-color, var(--tg-theme-hint-color-fallback));
+}
+
+.main-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: var(--tg-theme-section-bg-color, var(--tg-theme-section-bg-color-fallback));
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    height: fit-content;
+}
+
+a {
+  color: var(--tg-theme-link-color, var(--tg-theme-link-color-fallback));
+  text-decoration: none;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.8em 1.4em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--tg-theme-button-color, var(--tg-theme-button-color-fallback));
+  color: var(--tg-theme-button-text-color, var(--tg-theme-button-text-color-fallback));
+  cursor: pointer;
+  transition: border-color 0.25s;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+input[type='text'],
+input[type='password'] {
+  width: 100%;
+  padding: 0.8em 1.2em;
+  font-size: 1em;
+  border-radius: 8px;
+  border: 1px solid var(--tg-theme-hint-color, #ccc);
+  background-color: var(--tg-theme-bg-color, var(--tg-theme-bg-color-fallback));
+  color: var(--tg-theme-text-color, var(--tg-theme-text-color-fallback));
+  box-sizing: border-box;
+}
+
+input:focus {
+    border-color: var(--tg-theme-link-color, var(--tg-theme-link-color-fallback));
+    outline: none;
+}
