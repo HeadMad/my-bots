@@ -37,8 +37,8 @@ p, label {
 }
 
 .main-container {
-    width: 100%;
-    max-width: 600px;
+    /* width: 100%; */
+    /* max-width: 600px; */
     background-color: var(--tg-theme-section-bg-color, var(--tg-theme-section-bg-color-fallback));
     padding: 2rem;
     border-radius: 8px;

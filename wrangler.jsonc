@@ -1,11 +1,43 @@
 {
-  "$schema": "https://unpkg.com/wrangler@latest/workers.schema.json",
-  "main": "./.svelte-kit/cloudflare/_worker.js",
   "name": "app",
+  "main": ".svelte-kit/cloudflare/_worker.js",
   "compatibility_date": "2025-12-04",
   "assets": {
     "binding": "__STATIC_CONTENT",
-    "directory": "./.svelte-kit/cloudflare/client"
+    "directory": ".svelte-kit/cloudflare/client"
   },
-  "compatibility_flags": ["nodejs_compat"]
+  "vars": {
+    "PUBLIC_WEBHOOK_BASE_URL": "https://app.baikalrobot.workers.dev"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "bothub-db",
+      "database_id": "d577d60b-f343-4df3-98b1-22bc746e6f4b"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "CHAT",
+        "class_name": "ChatRoom"
+      },
+      {
+        "name": "LOGIN_SESSION",
+        "class_name": "LoginSession"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v2",
+      "new_sqlite_classes": [
+        "ChatRoom",
+        "LoginSession"
+      ]
+    }
+  ],
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
 }

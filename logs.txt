@@ -1,0 +1,2 @@
+X [ERROR] Your Worker depends on the following Durable Objects, which are not exported in your entrypoint file: BotEventManager.
+  You should export these objects from your entrypoint, src\main.js.
